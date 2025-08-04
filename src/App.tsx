@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css"
+import { useState } from "react";
+import { closestCorners, DndContext } from "@dnd-kit/core";
+import { Column } from "./components/Column/Column";
+import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
+import { useSensor, useSensors } from "@dnd-kit/core";
+import { PointerSensor, TouchSensor, KeyboardSensor } from "@dnd-kit/core";
+import { Input } from "./components/Input/Input";
+export default function App() {
+  const [tasks, setTasks] = useState([
+    { id: 1 , title: "Add tests to homepage" },
+    { id: 2 , title: "Fix styling in about section" },
+    { id: 3 , title: "Learn how to center a div" },
+  ]);
 
-function App() {
-  const [count, setCount] = useState(0)
 
+
+  const getTaskPos = (id) => tasks.findIndex((task) => task.id === id);
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id === over.id) return;
+    setTasks(tasks => {
+      const originalPos = getTaskPos(active.id);
+      const newPos = getTaskPos(over.id);
+
+      return arrayMove(tasks, originalPos, newPos);
+    })
+  };
+
+  const addTask = (title) => {
+    setTasks((tasks) => [...tasks, { id: tasks.length + 1, title } ]);
+  };
+  const sensors =useSensors(
+    useSensor(PointerSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor,{
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+    
+
+  );
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
+    <div className="App">
       <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <DndContext sensors={sensors} onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
+        <Input onSubmit={addTask}/>
+        <Column tasks={tasks} />
+      </DndContext>
+    </div>
+  );
 }
 
-export default App
