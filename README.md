@@ -67,3 +67,21 @@ export default tseslint.config([
   },
 ])
 ```
+
+## 環境構築手順
+以下のコードをターミナルで実行する
+
+### 依存パッケージのインストール
+'''js
+npm install
+'''
+
+### dnd-kitのインストール
+'''js
+npm install @dnd-kit/core @dnd-kit/utilities @dnd-kit/sortable
+'''
+
+### 実行
+'''js
+npm run dev
+'''
