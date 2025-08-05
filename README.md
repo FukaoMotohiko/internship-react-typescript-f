@@ -73,18 +73,18 @@ export default tseslint.config([
 
 ### 依存パッケージのインストール
 
-```js
+```bash
 npm install
 ```
 
 ### dnd-kitのインストール
 
-```js
+```bash
 npm install @dnd-kit/core @dnd-kit/utilities @dnd-kit/sortable
 ```
 
 ### 開発サーバーの実行
 
-```js
+```bash
 npm run dev
 ```
