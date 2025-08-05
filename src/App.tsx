@@ -8,9 +8,9 @@ import { PointerSensor, TouchSensor, KeyboardSensor } from "@dnd-kit/core";
 import { Input } from "./components/Input/Input";
 export default function App() {
   const [tasks, setTasks] = useState([
-    { id: 1 , title: "Add tests to homepage" },
-    { id: 2 , title: "Fix styling in about section" },
-    { id: 3 , title: "Learn how to center a div" },
+    { id: 1 , title: "魚" },
+    { id: 2 , title: "肉" },
+    { id: 3 , title: "野菜" },
   ]);
 
 
