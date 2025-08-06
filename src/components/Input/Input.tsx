@@ -11,7 +11,9 @@ export const Input = ({ onSubmit }) => {
         setInput("");
     };
     return <div className="container">
-        <input type="text" className="input" value={input} onChange={e => setInput(e.target.value)}/>
+        <input type="text" className="input"
+        value={input} 
+        onChange={e => setInput(e.target.value)}/>
         <button onClick={handleSubmit} className="button">Add</button>
     </div>;
 };
