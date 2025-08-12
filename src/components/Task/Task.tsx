@@ -1,7 +1,13 @@
 import "./Task.css";
 import { useSortable} from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-export const Task =({id, title}) => {
+import React from "react";
+
+ interface TaskProps {
+    id: number;
+    title: string;
+ }
+export const Task: React.FC<TaskProps> =({id, title}) => {
     const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id});
 const style = {
     transition,
