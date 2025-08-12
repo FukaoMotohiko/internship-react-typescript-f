@@ -7,6 +7,7 @@ import React from "react";
     id: number;
     title: string;
  }
+ 
 export const Task: React.FC<TaskProps> =({id, title}) => {
     const {attributes, listeners, setNodeRef, transform, transition} = useSortable({id});
 const style = {

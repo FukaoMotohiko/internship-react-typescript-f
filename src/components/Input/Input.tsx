@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
 import "./Input.css";
+
 interface InputProps {
     onSubmit: (title: string) => void;
 }
+
 export const Input:React.FC <InputProps> = ({ onSubmit }) => {
     const [input, setInput] = useState<string>("");
 
