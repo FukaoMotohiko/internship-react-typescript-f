@@ -65,3 +65,11 @@
 * 詰まったポイントやエラー、その対応方法など
     * input タグの onChange にイベント型を指定するところ　ー＞　イベントの型の記法について書かれているサイトを参考にした。
     [【React + TypeScript】イベントの型の記法には3種類あります](https://monotein.com/blog/typescript-react-event-3-annotations)
+
+# 8/18
+* 気づいたこと
+    * 
+* 初めて知った技術用語
+    * 
+* 詰まったポイントやエラー、その対応方法など
+    * 
