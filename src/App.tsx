@@ -21,7 +21,7 @@ export default function App() {
 
 
 
-  const getTaskPos = (id:number)  : number => tasks.findIndex((task) => task.id === id);
+  const getTaskPos = (id: number)  : number => tasks.findIndex((task) => task.id === id);
   const handleDragEnd = (event:any) => {
     const { active, over } = event;
 
@@ -38,7 +38,7 @@ export default function App() {
     })
   };
 
-  const addTask = (title:string) => {
+  const addTask = (title: string) => {
     setTasks((tasks) => [...tasks, { id: tasks.length + 1, title } ]);
   };
   const sensors =useSensors(
