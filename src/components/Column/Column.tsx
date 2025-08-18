@@ -1,7 +1,12 @@
 import "./Column.css"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { Task } from "../Task/Task";
-export const Column = ( { tasks } ) => {
+
+interface ColumnProps {
+    tasks: { id: number; title: string }[];
+}
+
+export const Column:React.FC <ColumnProps> = ( { tasks } ) => {
     return (
         <div className="column">
           <SortableContext items={tasks} strategy=
