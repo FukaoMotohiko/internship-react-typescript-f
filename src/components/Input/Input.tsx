@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-
+import type { User } from "../../types/task";
 import "./Input.css";
 
 interface InputProps {
-    onSubmit: (title: string) => void;
-}
+    onSubmit: (title: User['title']) => void;
+};
 
 export const Input:React.FC <InputProps> = ({ onSubmit }) => {
     const [input, setInput] = useState<string>("");

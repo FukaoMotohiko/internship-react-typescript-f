@@ -6,14 +6,11 @@ import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { useSensor, useSensors } from "@dnd-kit/core";
 import { PointerSensor, TouchSensor, KeyboardSensor } from "@dnd-kit/core";
 import { Input } from "./components/Input/Input";
+import type { User } from "./types/task";
 
-interface useStateProps {
-  id: number;
-  title: string;
-}
 
 export default function App() {
-  const [tasks, setTasks] = useState<useStateProps[]>([
+  const [tasks, setTasks] = useState<User[]>([
     { id: 1 , title: "魚" },
     { id: 2 , title: "肉" },
     { id: 3 , title: "野菜" },
@@ -22,7 +19,7 @@ export default function App() {
 
 
   const getTaskPos = (id: number)  : number => tasks.findIndex((task) => task.id === id);
-  const handleDragEnd = (event:any) => {
+  const handleDragEnd = (event: any) => {
     const { active, over } = event;
 
     if (!over) {
