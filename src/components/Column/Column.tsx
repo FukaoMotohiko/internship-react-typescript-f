@@ -1,9 +1,9 @@
 import "./Column.css"
 import { SortableContext, verticalListSortingStrategy } from "@dnd-kit/sortable";
 import { Task } from "../Task/Task";
-import type { User } from "../../types/task";
+import type { Task as TaskItem } from "../../types/task";
 interface ColumnProps {
-    tasks: User [];
+    tasks: TaskItem [];
 }
 
 export const Column:React.FC <ColumnProps> = ( { tasks } ) => {

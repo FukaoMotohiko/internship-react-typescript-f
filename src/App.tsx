@@ -6,11 +6,11 @@ import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import { useSensor, useSensors } from "@dnd-kit/core";
 import { PointerSensor, TouchSensor, KeyboardSensor } from "@dnd-kit/core";
 import { Input } from "./components/Input/Input";
-import type { User } from "./types/task";
+import type { Task } from "./types/task";
 
 
 export default function App() {
-  const [tasks, setTasks] = useState<User[]>([
+  const [tasks, setTasks] = useState<Task[]>([
     { id: 1 , title: "魚" },
     { id: 2 , title: "肉" },
     { id: 3 , title: "野菜" },

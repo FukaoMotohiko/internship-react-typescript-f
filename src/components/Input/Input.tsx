@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import type { User } from "../../types/task";
+import type { Task } from "../../types/task";
 import "./Input.css";
 
 interface InputProps {
-    onSubmit: (title: User['title']) => void;
+    onSubmit: (title: Task['title']) => void;
 };
 
 export const Input:React.FC <InputProps> = ({ onSubmit }) => {
